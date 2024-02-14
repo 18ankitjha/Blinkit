@@ -12,7 +12,7 @@ export default function Dashboard() {
   const fetchImages = async () => {
     try {
       let response = await fetch(
-        "http://localhost:5000/api/images/fetchallimages",
+        "https://blinkitbackend.onrender.com/api/images/fetchallimages",
         {
           headers: {
             "auth-token": localStorage.getItem("token"),
@@ -57,7 +57,7 @@ export default function Dashboard() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/images/addimage",
+        "https://blinkitbackend.onrender.com/api/images/addimage",
         {
           method: "POST",
           headers: {

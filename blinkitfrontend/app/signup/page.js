@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import blinkitlogo from '../../public/blinkitfrontendlogo.png'
 
 
 export default function Signup() {
@@ -40,7 +41,7 @@ export default function Signup() {
 
     try {
       console.log(process.env.BACKEND_URL)
-      let response = await fetch(`http://localhost:5000/api/auth/createUser`, {
+      let response = await fetch(`https://blinkitbackend.onrender.com/api/auth/createUser`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -87,11 +88,8 @@ export default function Signup() {
       <Navbar />
       <div className="flex  min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            className="mx-auto h-10 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt="Your Company"
-          />
+        <img className="mx-auto h-20 w-auto" src={blinkitlogo.src} alt="Your Company" />
+
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign up to your account
           </h2>
@@ -114,7 +112,7 @@ export default function Signup() {
                   type="text"
                   autoComplete="name"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -134,7 +132,7 @@ export default function Signup() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -155,7 +153,7 @@ export default function Signup() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -163,7 +161,7 @@ export default function Signup() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
               >
                 Sign Up
               </button>
@@ -174,7 +172,7 @@ export default function Signup() {
             Already a member?
             <Link
               href="/"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+              className="font-semibold leading-6 text-green-600 hover:text-green-500"
             >
               Sign In
             </Link>

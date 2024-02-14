@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const ImageSchema = new mongoose.Schema({
     title: {
         type:String,
-        required:true
+        default:"Untitled"
     },
     url:{
         type:String,

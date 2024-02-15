@@ -9,6 +9,7 @@ const Navbar = () => {
         <Link href="/">
           <Image src={Blinkit} alt="Blinkit" width={40} height={40} />
         </Link>
+        
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"></div>
         <div
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"

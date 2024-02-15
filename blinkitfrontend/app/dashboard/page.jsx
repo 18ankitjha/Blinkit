@@ -56,6 +56,7 @@ export default function Dashboard() {
         return;
       }
 
+      toast.success("Image uploaded successfully");
       const response = await fetch(
         "https://blinkitbackend.onrender.com/api/images/addimage",
         {
@@ -84,6 +85,7 @@ export default function Dashboard() {
 
   return (
     <>
+      <ToastContainer />
       <Navbar />
 
       <form method="POST" action="#" className="" onSubmit={handleSubmit}>
@@ -117,6 +119,11 @@ export default function Dashboard() {
       </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4 px-8 py-8">
+        {imageUrls.length === 0 && (
+          <h1 className="text-lg font-semibold">
+            No images found!! Please Upload the image to preview
+          </h1>
+        )}
         {imageUrls.map((imageUrl, index) => (
           <Card key={index} image={imageUrl} />
         ))}
